@@ -218,8 +218,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var $ = jQuery;
-
 var PremiumPluginSearch = function (_Component) {
   _inherits(PremiumPluginSearch, _Component);
 
@@ -333,7 +331,7 @@ var PremiumPluginSearch = function (_Component) {
 exports.default = PremiumPluginSearch;
 
 
-$(document).on("ready", function () {
+jQuery(document).on("ready", function () {
   _reactDom2.default.render(_react2.default.createElement(PremiumPluginSearch, null), document.getElementById("PPS-app"));
 });
 
@@ -679,7 +677,7 @@ var ProductDetails = (_dec = (0, _reactRedux.connect)(function (store) {
     };
 
     var self = _this;
-    $(window).on('resize', function () {
+    jQuery(window).on('resize', function () {
       self.ResizeHeight();
     });
     return _this;
@@ -688,9 +686,9 @@ var ProductDetails = (_dec = (0, _reactRedux.connect)(function (store) {
   _createClass(ProductDetails, [{
     key: "ResizeHeight",
     value: function ResizeHeight() {
-      var scroll_content = $(".PPS-item-content");
+      var scroll_content = jQuery(".PPS-item-content");
       if (scroll_content.length > 0) {
-        var main_elm = $(".plugin-lightbox").eq(0),
+        var main_elm = jQuery(".plugin-lightbox").eq(0),
             main_height = main_elm.height();
 
         scroll_content.height(main_height - 580);
@@ -1145,7 +1143,7 @@ var Search = (_dec = (0, _reactRedux.connect)(function (store) {
     value: function LaunchSearch(e) {
       e.preventDefault();
 
-      var form = $(e.target);
+      var form = jQuery(e.target);
 
       var data = {
         'term': form.find('[name="' + (window.PPS['alias'] + "term") + '"]').val(),
@@ -1616,7 +1614,7 @@ function buildSettingsFooter() {
 }
 
 function saveSettings(context) {
-  var form = $(context.target).parents('form').eq(0);
+  var form = jQuery(context.target).parents('form').eq(0);
 
   (0, _axios2.default)({
     method: 'PUT',
